@@ -264,6 +264,34 @@
         <Label x:Name="label11" Content="Erase" HorizontalAlignment="Left" Margin="559,308,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label12" Content="Device" HorizontalAlignment="Left" Margin="770,225,0,0" VerticalAlignment="Top"/>
 
+        <DockPanel LastChildFill="False">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="Exit" Click="menuItemExit_Click"/>
+                </MenuItem>
+                <MenuItem Header="Device">
+                    <MenuItem Header="Blank Check" Click="menuItemBlankCheck_Click"/>
+                    <MenuItem Header="Copy" Click="menuItemCopy_Click"/>
+                    <MenuItem Header="Program" Click="menuItemProgram_Click"/>
+                    <MenuItem Header="Verify" Click="menuItemVerify_Click"/>
+                    <MenuItem Header="Blank-Program-Verify (B.P.V.)"/>
+                    <MenuItem Header="Erase"/>
+                </MenuItem>
+                <MenuItem Header="Edit">
+                    <MenuItem Header="Complement"/>
+                    <MenuItem Header="RAM Clear" Click="menuItemRamClean_Click"/>
+                </MenuItem>
+                <MenuItem Header="Function">
+                    <MenuItem Header="Verify"/>
+                </MenuItem>
+                <MenuItem Header="Interface">
+                    <MenuItem Header="Serial Input"/>
+                    <MenuItem Header="Serial Output"/>
+                    <MenuItem Header="Serial Verify"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
 
     </Grid>
 </Window>
