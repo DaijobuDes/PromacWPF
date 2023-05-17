@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO.Ports;
+using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace PromacWPF
 {
@@ -21,7 +23,15 @@ namespace PromacWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        [DllImport("Kernel32")]
+        public static extern void AllocConsole();
+
+        [DllImport("Kernel32", SetLastError = true)]
+        public static extern void FreeConsole();
+
         private SerialPort? _serial;
+        private Thread _readSerial;
+
 
         public MainWindow()
         {
@@ -29,6 +39,31 @@ namespace PromacWPF
             comboBoxParity.ItemsSource = Enum.GetValues(typeof(Parity)).Cast<Parity>().ToList();
             comboBoxStopBit.ItemsSource = Enum.GetValues(typeof(StopBits)).Cast<StopBits>().ToList();
             comboBoxFlowControl.ItemsSource = Enum.GetValues(typeof(Handshake)).Cast<Handshake>().ToList();
+            AllocConsole();
+        }
+
+        private void ReadSerial()
+        {
+
+            if (_serial ==  null)
+            {
+                return;
+            }
+
+            try
+            {
+                while (true)
+                {
+                    var s = _serial.ReadLine();
+                    if (s != null)
+                    {
+                        Console.Write(s.Trim() + "\r\n");
+                    }
+                }
+            } catch (Exception ex)
+            {
+                return;
+            }
         }
 
         private void ProcessByte(string s)
@@ -105,6 +140,8 @@ namespace PromacWPF
             try
             {
                 _serial.Open();
+                _readSerial = new Thread(() => { ReadSerial(); });
+                _readSerial.Start();
             }
             catch (Exception ex)
             {
@@ -134,6 +171,7 @@ namespace PromacWPF
             try
             {
                 _serial.Close();
+                _readSerial.Interrupt();
             }
             catch (Exception ex)
             {
