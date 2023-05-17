@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PromacWPF" 
         xmlns:Ports="clr-namespace:System.IO.Ports;assembly=System.IO.Ports" x:Class="PromacWPF.MainWindow" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Promac2 WPF UI" Height="720" Width="1280">
     <Grid>
         <Label x:Name="label" Content="COM Port:" HorizontalAlignment="Left" Margin="62,42,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="Bits per second:" HorizontalAlignment="Left" Margin="33,68,0,0" VerticalAlignment="Top"/>
@@ -54,6 +54,208 @@
         <Button x:Name="buttonOpenPort" Content="Open" HorizontalAlignment="Left" Margin="83,217,0,0" VerticalAlignment="Top" Click="buttonOpenPort_Click"/>
         <Button x:Name="buttonClosePort" Content="Close" HorizontalAlignment="Left" Margin="121,217,0,0" VerticalAlignment="Top" Click="buttonClosePort_Click"/>
         <Button x:Name="buttonRestoreDefaults" Content="Restore Defaults" HorizontalAlignment="Left" Margin="159,217,0,0" VerticalAlignment="Top" Click="buttonRestoreDefaults_Click"/>
+        <Button x:Name="buttonTest" Content="Test" HorizontalAlignment="Left" Margin="159,242,0,0" VerticalAlignment="Top" Click="buttonTestPort_Click" Width="90" Height="20"/>
+        
+        <!-- START C-F BUTTONS -->
+        <Button x:Name="buttonC" Content="C" HorizontalAlignment="Left" Margin="309,253,0,0" VerticalAlignment="Top" Width="40" Height="40" FontWeight="Bold" Click="buttonC_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonD" Content="D" HorizontalAlignment="Left" Margin="392,253,0,0" VerticalAlignment="Top" Width="40" Height="40" FontWeight="Bold" Click="buttonD_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonE" Content="E" HorizontalAlignment="Left" Margin="475,253,0,0" VerticalAlignment="Top" Width="40" Height="40" FontWeight="Bold" Click="buttonE_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonF" Content="F" HorizontalAlignment="Left" Margin="558,253,0,0" VerticalAlignment="Top" Width="39" Height="40" FontWeight="Bold">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <!-- END C-F BUTTONS -->
+
+        <!-- START 8-B BUTTONS -->
+        <Button x:Name="button8" Content="8" HorizontalAlignment="Left" Margin="309,336,0,0" VerticalAlignment="Top" Width="40" Height="39" FontWeight="Bold" Click="button8_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="button9" Content="9" HorizontalAlignment="Left" Margin="392,336,0,0" VerticalAlignment="Top" Width="40" Height="39" FontWeight="Bold" Click="button9_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonA" Content="A" HorizontalAlignment="Left" Margin="475,336,0,0" VerticalAlignment="Top" Width="40" Height="39" FontWeight="Bold" Click="buttonA_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonB" Content="B" HorizontalAlignment="Left" Margin="558,336,0,0" VerticalAlignment="Top" Width="39" Height="39" FontWeight="Bold" Click="buttonB_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <!-- END 8-B BUTTONS -->
+
+        <!-- START 4-7 BUTTONS -->
+        <Button x:Name="button4" Content="4" HorizontalAlignment="Left" Margin="309,419,0,0" VerticalAlignment="Top" Width="40" Height="39" FontWeight="Bold" Click="button4_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"></Setter>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="button5" Content="5" HorizontalAlignment="Left" Margin="392,419,0,0" VerticalAlignment="Top" Width="40" Height="39" FontWeight="Bold" Click="button5_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="button6" Content="6" HorizontalAlignment="Left" Margin="475,419,0,0" VerticalAlignment="Top" Width="40" Height="39" FontWeight="Bold" Click="button6_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="button7" Content="7" HorizontalAlignment="Left" Margin="558,419,0,0" VerticalAlignment="Top" Width="39" Height="39" FontWeight="Bold" Click="button7_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <!-- END 4-7 BUTTONS -->
+
+        <!-- START 0-3 BUTTONS -->
+        <Button x:Name="button0" Content="0" HorizontalAlignment="Left" Margin="309,501,0,0" VerticalAlignment="Top" Width="40" Height="40" FontWeight="Bold" Click="button0_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="button1" Content="1" HorizontalAlignment="Left" Margin="392,501,0,0" VerticalAlignment="Top" Width="40" Height="40" FontWeight="Bold" Click="button1_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="button2" Content="2" HorizontalAlignment="Left" Margin="475,501,0,0" VerticalAlignment="Top" Width="40" Height="40" FontWeight="Bold" Click="button2_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="button3" Content="3" HorizontalAlignment="Left" Margin="558,501,0,0" VerticalAlignment="Top" Width="39" Height="40" FontWeight="Bold" Click="button3_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <!-- END 8-B BUTTONS -->
+
+        <!-- DEVICE BUTTON -->
+        <Button x:Name="buttonDevice" Content="Device" HorizontalAlignment="Left" Margin="740,253,0,0" VerticalAlignment="Top" Height="40" Width="106" Click="buttonDevice_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!-- FUNCTION BUTTON -->
+        <Button x:Name="buttonFunction" Content="Function" HorizontalAlignment="Left" Margin="889,253,0,0" VerticalAlignment="Top" Height="40" Width="106" Click="buttonFunction_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!-- ROM TYPE BUTTON -->
+        <Button x:Name="buttonRomType" Content="ROM Type" HorizontalAlignment="Left" Margin="740,336,0,0" VerticalAlignment="Top" Height="39" Width="106" Click="buttonRomType_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!-- EDIT BUTTON -->
+        <Button x:Name="buttonEdit" Content="Edit" HorizontalAlignment="Left" Margin="889,336,0,0" VerticalAlignment="Top" Height="39" Width="106">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!-- UP ARROW BUTTON -->
+        <Button x:Name="buttonUpArrow" Content="▲" HorizontalAlignment="Left" Margin="889,419,0,0" VerticalAlignment="Top" Height="39" Width="106" Click="buttonUpArrow_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!-- DOWN ARROW BUTTON -->
+        <Button x:Name="buttonDownButton" Content="▼" HorizontalAlignment="Left" Margin="740,419,0,0" VerticalAlignment="Top" Height="39" Width="106" Click="buttonDownButton_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!-- SET BUTTON -->
+        <Button x:Name="buttonSet" Content="Set" HorizontalAlignment="Left" Margin="740,501,0,0" VerticalAlignment="Top" Height="40" Width="106" Click="buttonSet_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!-- RESET BUTTON -->
+        <Button x:Name="buttonReset" Content="Reset" HorizontalAlignment="Left" Margin="889,501,0,0" VerticalAlignment="Top" Height="40" Width="106" Click="buttonReset_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+
+
+
+
 
     </Grid>
 </Window>
