@@ -271,5 +271,10 @@ namespace PromacWPF
         {
             ProcessByte("@");
         }
+
+        private void buttonEdit_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("T");
+        }
     }
 }
