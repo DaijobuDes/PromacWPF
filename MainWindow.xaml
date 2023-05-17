@@ -8,6 +8,10 @@
         mc:Ignorable="d"
         Title="Promac2 WPF UI" Height="720" Width="1280">
     <Grid>
+ 
+        <Rectangle HorizontalAlignment="Left" Height="91" Margin="455,298,0,0" VerticalAlignment="Top" Width="162" Fill="#FFC7C7C7" RadiusX="10" RadiusY="10"/>
+        <Rectangle HorizontalAlignment="Left" Height="83" Margin="294,225,0,0" VerticalAlignment="Top" Width="572" Fill="#FFC7C7C7" RadiusX="10" RadiusY="10"/>
+
         <Label x:Name="label" Content="COM Port:" HorizontalAlignment="Left" Margin="62,42,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="Bits per second:" HorizontalAlignment="Left" Margin="33,68,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label2" Content="Data bits:" HorizontalAlignment="Left" Margin="67,94,0,0" VerticalAlignment="Top"/>
@@ -55,7 +59,7 @@
         <Button x:Name="buttonClosePort" Content="Close" HorizontalAlignment="Left" Margin="121,217,0,0" VerticalAlignment="Top" Click="buttonClosePort_Click"/>
         <Button x:Name="buttonRestoreDefaults" Content="Restore Defaults" HorizontalAlignment="Left" Margin="159,217,0,0" VerticalAlignment="Top" Click="buttonRestoreDefaults_Click"/>
         <Button x:Name="buttonTest" Content="Test" HorizontalAlignment="Left" Margin="159,242,0,0" VerticalAlignment="Top" Click="buttonTestPort_Click" Width="90" Height="20"/>
-        
+
         <!-- START C-F BUTTONS -->
         <Button x:Name="buttonC" Content="C" HorizontalAlignment="Left" Margin="309,253,0,0" VerticalAlignment="Top" Width="40" Height="40" FontWeight="Bold" Click="buttonC_Click">
             <Button.Resources>
@@ -252,9 +256,13 @@
             </Button.Resources>
         </Button>
 
-
-
-
+        <Label x:Name="label6" Content="Blank" HorizontalAlignment="Left" Margin="309,225,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label7" Content="Program" HorizontalAlignment="Left" Margin="384,225,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label8" Content="Verify" HorizontalAlignment="Left" Margin="475,225,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label9" Content="B.P.V." HorizontalAlignment="Left" Margin="558,225,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label10" Content="Copy" HorizontalAlignment="Left" Margin="476,308,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label11" Content="Erase" HorizontalAlignment="Left" Margin="559,308,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label12" Content="Device" HorizontalAlignment="Left" Margin="770,225,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>
