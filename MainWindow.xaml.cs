@@ -31,6 +31,23 @@ namespace PromacWPF
             comboBoxFlowControl.ItemsSource = Enum.GetValues(typeof(Handshake)).Cast<Handshake>().ToList();
         }
 
+        private void ProcessByte(string s)
+        {
+            if (_serial == null || !_serial.IsOpen)
+            {
+                MessageBox.Show("Invalid handle.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            _serial.Write(s);
+        }
+
+        private void TestPort()
+        {
+            string s = "0123456789ABCDEF";
+            ProcessByte(s);
+        }
+
         private void buttonRefreshPort_Click(object sender, RoutedEventArgs e)
         {
             string[] ports = SerialPort.GetPortNames();
@@ -50,6 +67,11 @@ namespace PromacWPF
 
             comboBoxComPort.SelectedIndex = 0;
 
+        }
+
+        private void buttonTestPort_Click(object sender, RoutedEventArgs e)
+        {
+            TestPort();
         }
 
         private void buttonOpenPort_Click(object sender, RoutedEventArgs e)
@@ -80,7 +102,15 @@ namespace PromacWPF
             _serial.StopBits = (StopBits)comboBoxStopBit.SelectedIndex;
             _serial.Handshake = (Handshake)comboBoxFlowControl.SelectedIndex;
 
-            _serial.Open();
+            try
+            {
+                _serial.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occured.\nStacktrace:\n{ex}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             
             if (_serial.IsOpen)
             {
@@ -101,7 +131,15 @@ namespace PromacWPF
                 return;
             }
 
-            _serial.Close();
+            try
+            {
+                _serial.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occured.\nStacktrace:\n{ex}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
             if (!_serial.IsOpen)
             {
@@ -119,5 +157,119 @@ namespace PromacWPF
             comboBoxFlowControl.SelectedIndex = 0;
         }
 
+        private void buttonF_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("F");
+        }
+
+        private void buttonE_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("E");
+        }
+
+        private void buttonD_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("D");
+        }
+
+        private void buttonC_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("C");
+        }
+
+        private void buttonB_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("B");
+        }
+
+        private void buttonA_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("A");
+        }
+
+        private void button9_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("9");
+        }
+
+        private void button8_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("8");
+        }
+
+        private void button7_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("7");
+        }
+
+        private void button6_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("6");
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("5");
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("4");
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("3");
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("2");
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("1");
+        }
+
+        private void button0_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("0");
+        }
+
+        private void buttonDevice_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("P");
+        }
+
+        private void buttonFunction_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("U");
+        }
+
+        private void buttonRomType_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("R");
+        }
+
+        private void buttonUpArrow_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte(" ");
+        }
+
+        private void buttonDownButton_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("/");
+        }
+
+        private void buttonSet_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("\r");
+        }
+
+        private void buttonReset_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("@");
+        }
     }
 }
