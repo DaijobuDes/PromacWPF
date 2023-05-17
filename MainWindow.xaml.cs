@@ -314,5 +314,35 @@ namespace PromacWPF
         {
             ProcessByte("T");
         }
+
+        private void menuItemExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void menuItemBlankCheck_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("PC\r");
+        }
+
+        private void menuItemCopy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void menuItemProgram_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void menuItemVerify_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void menuItemRamClean_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("T4\r");
+        }
     }
 }
