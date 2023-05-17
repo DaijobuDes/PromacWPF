@@ -78,7 +78,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="buttonF" Content="F" HorizontalAlignment="Left" Margin="558,253,0,0" VerticalAlignment="Top" Width="39" Height="40" FontWeight="Bold">
+        <Button x:Name="buttonF" Content="F" HorizontalAlignment="Left" Margin="558,253,0,0" VerticalAlignment="Top" Width="39" Height="40" FontWeight="Bold" Click="buttonF_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -208,7 +208,7 @@
         </Button>
 
         <!-- EDIT BUTTON -->
-        <Button x:Name="buttonEdit" Content="Edit" HorizontalAlignment="Left" Margin="889,336,0,0" VerticalAlignment="Top" Height="39" Width="106">
+        <Button x:Name="buttonEdit" Content="Edit" HorizontalAlignment="Left" Margin="889,336,0,0" VerticalAlignment="Top" Height="39" Width="106" Click="buttonEdit_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
