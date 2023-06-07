@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PromacWPF" 
         xmlns:Ports="clr-namespace:System.IO.Ports;assembly=System.IO.Ports" x:Class="PromacWPF.MainWindow" 
         mc:Ignorable="d"
-        Title="Promac2 WPF UI" Height="720" Width="1280">
+        Title="Promac2 WPF UI" Height="720" Width="1280" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
  
         <Rectangle HorizontalAlignment="Left" Height="91" Margin="455,298,0,0" VerticalAlignment="Top" Width="162" Fill="#FFC7C7C7" RadiusX="10" RadiusY="10"/>
@@ -274,20 +274,22 @@
                     <MenuItem Header="Copy" Click="menuItemCopy_Click"/>
                     <MenuItem Header="Program" Click="menuItemProgram_Click"/>
                     <MenuItem Header="Verify" Click="menuItemVerify_Click"/>
-                    <MenuItem Header="Blank-Program-Verify (B.P.V.)"/>
-                    <MenuItem Header="Erase"/>
+                    <MenuItem Header="Blank-Program-Verify (B.P.V.)" Click="menuItemBPV_Click"/>
+                    <MenuItem Header="Erase" Click="menuItemErase_Click"/>
                 </MenuItem>
                 <MenuItem Header="Edit">
-                    <MenuItem Header="Complement"/>
+                    <MenuItem Header="Complement" Click="menuItemComplement_Click"/>
                     <MenuItem Header="RAM Clear" Click="menuItemRamClean_Click"/>
                 </MenuItem>
+                <!--
                 <MenuItem Header="Function">
-                    <MenuItem Header="Verify"/>
+                    <MenuItem Header="Verify" Click="menuItemVerify_Click"/>
                 </MenuItem>
+                -->
                 <MenuItem Header="Interface">
-                    <MenuItem Header="Serial Input"/>
-                    <MenuItem Header="Serial Output"/>
-                    <MenuItem Header="Serial Verify"/>
+                    <MenuItem Header="Serial Input" Click="menuItemSerialInput_Click"/>
+                    <MenuItem Header="Serial Output" Click="menuItemSerialOutput_Click"/>
+                    <MenuItem Header="Serial Verify" Click="menuItemSerialVerify_Click"/>
                 </MenuItem>
             </Menu>
         </DockPanel>

@@ -327,22 +327,53 @@ namespace PromacWPF
 
         private void menuItemCopy_Click(object sender, RoutedEventArgs e)
         {
-
+            ProcessByte("PA\r");
         }
 
         private void menuItemProgram_Click(object sender, RoutedEventArgs e)
         {
-
+            ProcessByte("PD\r");
         }
 
         private void menuItemVerify_Click(object sender, RoutedEventArgs e)
         {
+            ProcessByte("PE\r");
+        }
 
+        private void menuItemBPV_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("PF\r");
+        }
+
+        private void menuItemErase_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("PB\r");
+        }
+
+        private void menuItemComplement_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("T4\r");
         }
 
         private void menuItemRamClean_Click(object sender, RoutedEventArgs e)
         {
             ProcessByte("T4\r");
         }
+
+        private void menuItemSerialInput_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("U6\r");
+        }
+
+        private void menuItemSerialOutput_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("U7\r");
+        }
+
+        private void menuItemSerialVerify_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessByte("U8\r");
+        }
+
     }
 }
